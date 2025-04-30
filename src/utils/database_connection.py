@@ -16,6 +16,34 @@ def get_users_collection(mongo_client):
     return users_database["users"]
 
 
+def get_math_database(mongo_client):
+    return mongo_client["math_questions"]
+
+
+def get_addition_collection(mongo_client):
+    math_database = get_math_database(mongo_client)
+
+    return math_database["addition"]
+
+
+def get_division_collection(mongo_client):
+    math_database = get_math_database(mongo_client)
+
+    return math_database["division"]
+
+
+def get_multiplication_collection(mongo_client):
+    math_database = get_math_database(mongo_client)
+
+    return math_database["multiplication"]
+
+
+def get_subtraction_collection(mongo_client):
+    math_database = get_math_database(mongo_client)
+
+    return math_database["subtraction"]
+
+
 load_dotenv()
 
 database_username = os.getenv("DB_USERNAME")
