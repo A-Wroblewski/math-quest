@@ -7,11 +7,10 @@ class UserBase(BaseModel):
     name: str
     email: EmailStr
     password: str
-    confirm_password: str
 
 
 class UserCreate(UserBase):
-    pass
+    confirm_password: str
 
 
 class UserUpdate(BaseModel):
@@ -21,5 +20,7 @@ class UserUpdate(BaseModel):
     confirm_password: Optional[str] = None
 
 
-class UserResponse(UserBase):
+class UserResponse(BaseModel):
     id: str = Field(..., alias="_id")
+    name: str
+    email: EmailStr
